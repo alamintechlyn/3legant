@@ -1064,7 +1064,7 @@
 
 .article_section .article-card a img{
   height: 325px;
-  aspect-ratio: 357/325;
+  /* aspect-ratio: 357/325; */
   object-fit: cover;
 }
 .article_section .artical-top-row .btn-area-article {
