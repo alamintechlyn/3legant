@@ -751,8 +751,11 @@
 .category-section .category-card{
   overflow: hidden;
 }
+.category-section .category-card a{
+  width: 100%;
+}
 .category-section .category-card img {
-  aspect-ratio: 357/309;
+  /* aspect-ratio: 357/309; */
   object-fit: contain;
   background: #f3f5f7;
   margin-bottom: 24px;
