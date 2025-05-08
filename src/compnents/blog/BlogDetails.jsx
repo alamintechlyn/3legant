@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BlogDetails = () => {
   return (
@@ -9,7 +10,7 @@ const BlogDetails = () => {
             <div className="col">
               <div className="breadcrumb-nav">
                 <span>
-                  <a href="/">
+                  <Link to="/">
                     Home
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +27,7 @@ const BlogDetails = () => {
                         stroke-linejoin="round"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </span>
                 <span>
                   <a href="/blog">

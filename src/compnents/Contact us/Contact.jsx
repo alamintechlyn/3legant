@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import image from "../../assets/images/contactImage.png"
 
 const Contact = () => {
@@ -6,7 +7,7 @@ const Contact = () => {
       <header className="contact-header-section">
         <div className="container">
           <div className="nav-links">
-            <a href="/">
+            <Link to="/">
               Home
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -23,10 +24,10 @@ const Contact = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </a>
-            <a href="#" className="active">
+            </Link>
+            <Link to="#" className="active">
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -63,7 +64,7 @@ const Contact = () => {
                 Est since 2019. Our customer service is always prepared to
                 support you 24/7
               </p>
-              <a href="#" className="shop-now">
+              <Link to="/shop" className="shop-now">
                 Shop Now
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +95,7 @@ const Contact = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </section>

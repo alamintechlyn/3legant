@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { allCollectionListRequest } from "../apiRequest/apiRequiest";
+import { Link } from "react-router-dom";
 
 const ShopCollection = () => {
   const [data, setData] = useState([]);
@@ -20,19 +21,19 @@ const ShopCollection = () => {
             {data.slice(0, 1).map((item) => (
               <div className="col-lg-6 left-col" key={item?.id}>
                 <div className="img-card-area">
-                  <a href={"/collection/" + item?._id}>
+                  <Link to={"/collection/" + item?._id}>
                     <img
                       src={item.collectionImage}
                       alt={item?.collectionName}
                     />
-                  </a>
+                  </Link>
                   <h4 className="card-text">{item?.collectionName}</h4>
-                  <a href={"/collection/" + item?._id}>
+                  <Link to={"/collection/" + item?._id}>
                     <div className="btns">
                       <p className="btn-text">Collections</p>
                       <ArrowIcon />
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -41,20 +42,20 @@ const ShopCollection = () => {
                 <div className="img-card-area" key={item?.id}>
                   <div className="text">
                     <h4 className="card-text">{item?.collectionName}</h4>
-                    <a href={"/collection/" + item?._id}>
+                    <Link to={"/collection/" + item?._id}>
                       <div className="btns">
                         <p className="btn-text">Collections</p>
                         <ArrowIcon />
                       </div>
-                    </a>
+                    </Link>
                   </div>
                   <div className="img">
-                    <a href={"/collection/" + item?._id}>
+                    <Link to={"/collection/" + item?._id}>
                       <img
                         src={item?.collectionImage}
                         alt={item?.collectionName}
                       />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}

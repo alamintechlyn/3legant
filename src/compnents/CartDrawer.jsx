@@ -5,6 +5,7 @@ import {
   removeCartRequest,
   cartCreateRequest,
 } from "../apiRequest/apiRequiest";
+import { Link } from "react-router-dom";
 
 const CartDrawer = ({ iscartActive, isSetcartActive, isOpen, onClose }) => {
   const cartListData = useSelector((state) => state.getCartList.cartList);
@@ -76,8 +77,8 @@ const CartDrawer = ({ iscartActive, isSetcartActive, isOpen, onClose }) => {
           {cartList?.length > 0 ? (
             cartList.map((item, id) => (
               <div key={id} className="cart-item">
-                <a
-                  href={`/product-details/` + item?.productID}
+                <Link
+                  to={`/product-details/` + item?.productID}
                   className="item-image"
                 >
                   {item?.product?.image ? (
@@ -85,7 +86,7 @@ const CartDrawer = ({ iscartActive, isSetcartActive, isOpen, onClose }) => {
                   ) : (
                     <p>No Image Available</p>
                   )}
-                </a>
+                </Link>
 
                 <div className="item-details">
                   <div className="item-header">
@@ -196,12 +197,12 @@ const CartDrawer = ({ iscartActive, isSetcartActive, isOpen, onClose }) => {
         </div>
 
         <div className="cart-actions">
-          <a href="/checkout" className="checkout-btn">
+          <Link to="/checkout" className="checkout-btn">
             Checkout
-          </a>
-          <a href="/cart" className="view-cart-link">
+          </Link>
+          <Link to="/cart" className="view-cart-link">
             View Cart
-          </a>
+          </Link>
         </div>
       </div>
     </div>

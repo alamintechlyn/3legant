@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { SignInRequest } from "../../apiRequest/apiRequiest";
 import {jwtDecode} from "jwt-decode"; 
+import { Link } from "react-router-dom";
 
 
 const SignIn = () => {
@@ -70,7 +71,7 @@ const SignIn = () => {
               <div className="signupWrapper signinWrapper">
                 <h2 className="pf-sign-up-text">Sign In</h2>
                 <p className="common-shop-now-btn">
-                  Don’t have an account yet? <a href="/signup">Sign Up</a>
+                  Don’t have an account yet? <Link to="/signup">Sign Up</Link>
                 </p>
                 <div className="form">
                   <input
@@ -144,7 +145,7 @@ const SignIn = () => {
                     <input type="checkbox" />
                     <p className="common-shop-now-btn">
                       Remember me
-                      <a href="#">Forgot password</a>
+                      <Link to="#">Forgot password</Link>
                     </p>
                   </div>
                   <button onClick={onSignIn} className="sign-up-button">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import img from "../assets/images/Discount-section/discount-img.jpg";
+import { Link } from "react-router-dom";
 const Discount = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 2,
@@ -76,9 +77,9 @@ const Discount = () => {
                   </div>
                 </div>
 
-                <a href="/shop" className="common-shop-now-btn">
+                <Link to="/shop" className="common-shop-now-btn">
                   Shop now
-                </a>
+                </Link>
               </div>
             </div>
           </div>

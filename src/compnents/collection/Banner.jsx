@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -9,7 +10,7 @@ const Banner = () => {
             <div className="col-lg-12">
               <div className="text_wrapper">
                 <div className="btn">
-                  <a href="/" className="btn-home">
+                  <Link to="/" className="btn-home">
                     Home
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +27,7 @@ const Banner = () => {
                         stroke-linejoin="round"
                       />
                     </svg>
-                  </a>
+                  </Link>
                   <h4 className="shop-btn">Shop</h4>
                 </div>
                 <h2 className="shop-text">Shop Page</h2>

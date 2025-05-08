@@ -5,6 +5,7 @@ import CartDrawer from "./CartDrawer";
 import { getAllCartRequest } from "../apiRequest/apiRequiest";
 import { useDispatch, useSelector } from "react-redux";
 import { setCartList } from "../redux/state-slice/cartList-slice";
+import { Link } from "react-router-dom";
 const Navigation = () => {
   const svgRef = useRef("");
   const [active, setActive] = useState(false);
@@ -75,32 +76,32 @@ const Navigation = () => {
                         stroke-linecap="round"
                       />
                     </svg>
-                    <a href="/">
+                    <Link to="/">
                       <img src={logo} alt="" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="middle">
                   <nav className="main-nav">
                     <ul>
                       <li>
-                        <a href="/">home</a>
+                        <Link to="/">home</Link>
                       </li>
                       <li>
-                        <a href="/shop">Shop</a>
+                        <Link to="/shop">Shop</Link>
                       </li>
                       <li>
-                        <a href="/blog">Blogs</a>
+                        <Link to="/blog">Blogs</Link>
                       </li>
                       <li>
-                        <a href="/contact">Contact Us</a>
+                        <Link to="/contact">Contact Us</Link>
                       </li>
                     </ul>
                   </nav>
                 </div>
                 <div className="right">
                   <div className="navigation-right-icon">
-                    <a href="/search">
+                    <Link to="/search">
                       <svg
                         className="search-svg"
                         xmlns="http://www.w3.org/2000/svg"
@@ -117,8 +118,8 @@ const Navigation = () => {
                           stroke-linejoin="round"
                         />
                       </svg>
-                    </a>
-                    <a href="/account">
+                    </Link>
+                    <Link to="/account">
                       <svg
                         className="user-svg"
                         xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +135,7 @@ const Navigation = () => {
                           stroke-linejoin="round"
                         />
                       </svg>
-                    </a>
+                    </Link>
 
                     <svg
                       onClick={CartonClickHandler}

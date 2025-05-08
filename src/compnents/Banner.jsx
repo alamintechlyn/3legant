@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../assets/images/banner-img/png.png";
+import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div>
@@ -14,15 +15,15 @@ const Banner = () => {
                 Whether you’re just starting out, have played your whole life or
                 you're a Tour pro, your swing is like a fingerprint.
               </p>
-              <a href="/shop" className="button">
+              <Link to="/shop" className="button">
                 Shopping Now
-              </a>
+              </Link>
             </div>
             <div className="col-lg-6">
               <div className="banner-img-right">
-                <a href="#">
+                <Link to="#">
                   <img src={img} alt="" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BlogList = () => {
   const blogPosts = [
@@ -81,12 +82,12 @@ const BlogList = () => {
             {blogPosts.map((post) => (
               <div className="blog-card" key={post.id}>
                 <div className="blog-image">
-                  <a href="/blogDetails">
+                  <Link to="/blogDetails">
                     <img
                       src={post.image || "/placeholder.svg"}
                       alt={post.title}
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="blog-content">
                   <h3 className="blog-title">{post.title}</h3>

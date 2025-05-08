@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { userSignUpRequest } from "../../apiRequest/apiRequiest";
 
@@ -62,7 +62,7 @@ const SignUp = () => {
               <div className="signupWrapper">
                 <h2 className="pf-sign-up-text">Sign up</h2>
                 <p className="common-shop-now-btn">
-                  Already have an account? <a href="/signin">Sign in</a>
+                  Already have an account? <Link to="/signin">Sign in</Link>
                 </p>
                 <div className="form">
                   <input ref={nameRef} type="text" placeholder="Your Name" />
@@ -137,8 +137,8 @@ const SignUp = () => {
                   <div className="terms_condition_cheaker">
                     <input type="checkbox" />
                     <p className="common-shop-now-btn">
-                      I agree with <a href="#">Privacy Policy</a> and
-                      <a href="#">Terms</a> of Use
+                      I agree with <Link to="#">Privacy Policy</Link> and
+                      <Link to="#">Terms</Link> of Use
                     </p>
                   </div>
                   <button onClick={onSignUp} className="sign-up-button">

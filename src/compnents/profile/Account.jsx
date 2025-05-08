@@ -3,7 +3,7 @@ import EditProfile from "./EditProfile";
 import { userGetRequest } from "../../apiRequest/apiRequiest";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../redux/state-slice/user-slice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Account = () => {
   const getUserDetails = useSelector((state) => state?.getUserDetails?.user);
   const dispatch = useDispatch();
@@ -128,16 +128,16 @@ const Account = () => {
               <nav className="sidebar-nav">
                 <ul>
                   <li className="active common-Listing-text">
-                    <a href="/account">Account</a>
+                    <Link to="/account">Account</Link>
                   </li>
                   <li className="common-Listing-text">
-                    <a href="/address">Address</a>
+                    <Link to="/address">Address</Link>
                   </li>
                   <li className="common-Listing-text">
-                    <a href="/order">Orders</a>
+                    <Link to="/order">Orders</Link>
                   </li>
                   <li className="common-Listing-text">
-                    <a href="/wishlist">Wishlist</a>
+                    <Link to="/wishlist">Wishlist</Link>
                   </li>
                   <li
                     className="common-Listing-text"

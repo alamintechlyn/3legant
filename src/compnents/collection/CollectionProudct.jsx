@@ -3,7 +3,7 @@ import {
   productByCategoryRequest,
   productByCollectionRequest,
 } from "../../apiRequest/apiRequiest";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const CollectionProudct = () => {
   //   const dispatch = useDispatch();
@@ -270,9 +270,9 @@ const CollectionProudct = () => {
                                   % OFF
                                 </div>
                               )}
-                            <a href={"/product-details/" + item?._id}>
+                            <Link to={"/product-details/" + item?._id}>
                               <img src={item.image} alt="Collection Image" />
-                            </a>
+                            </Link>
                           </div>
                           <div className="rating">
                             {[...Array(5)].map((_, i) => {

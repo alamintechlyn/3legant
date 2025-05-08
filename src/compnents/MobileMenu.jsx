@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/images/logo-phone-menu.png";
+import { Link } from "react-router-dom";
 
 const MobileMenu = ({ isActive, isSetActive }) => {
   return (
@@ -9,9 +10,9 @@ const MobileMenu = ({ isActive, isSetActive }) => {
         <div className={`mobile_menu_area ${isActive ? "active" : ""}`}>
           <div className="top">
             <div className="log_top_area">
-              <a href="#">
+              <Link to="#">
                 <img src={logo} alt="" />
-              </a>
+              </Link>
               <svg
                 onClick={() => isSetActive(false)}
                 width="24"
@@ -49,23 +50,23 @@ const MobileMenu = ({ isActive, isSetActive }) => {
             <div className="mobile_nav">
               <ul>
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="/shop">Shop</a>
+                  <Link to="/shop">Shop</Link>
                 </li>
                 <li>
-                  <a href="/blog">Blog</a>
+                  <Link to="/blog">Blog</Link>
                 </li>
                 <li>
-                  <a href="/contact">Contact Us</a>
+                  <Link to="/contact">Contact Us</Link>
                 </li>
               </ul>
             </div>
           </div>
 
           <div className="bottom">
-            <a href="/account">
+            <Link to="/account">
               <div className="mobile-cart-list">
                 <h4 className="common-text">Account</h4>
                 <div className="icon">
@@ -85,14 +86,14 @@ const MobileMenu = ({ isActive, isSetActive }) => {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
 
-            <a href="/signin" className="button">
+            <Link to="/signin" className="button">
               Sign In
-            </a>
+            </Link>
 
             <div className="mobile-social-media">
-              <a href="#">
+              <Link to="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -118,9 +119,9 @@ const MobileMenu = ({ isActive, isSetActive }) => {
                     stroke-width="1.5"
                   />
                 </svg>
-              </a>
+              </Link>
 
-              <a href="#">
+              <Link to="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -136,8 +137,8 @@ const MobileMenu = ({ isActive, isSetActive }) => {
                     stroke-linejoin="round"
                   />
                 </svg>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -161,7 +162,7 @@ const MobileMenu = ({ isActive, isSetActive }) => {
                     stroke-linecap="round"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProduct } from "../redux/state-slice/product-slice";
 import CartDrawer from "./CartDrawer";
 import { setCartList } from "../redux/state-slice/cartList-slice";
+import { Link } from "react-router-dom";
 
 const FeatureCollection = () => {
   const productData = useSelector((state) => state.getProduct.product);
@@ -116,13 +117,13 @@ const FeatureCollection = () => {
                                 </span>
                               )}
 
-                            <a href={"/product-details/" + item._id}>
+                            <Link to={"/product-details/" + item._id}>
                               <img
                                 className="product-image"
                                 src={item.image}
                                 alt={item.title}
                               />
-                            </a>
+                            </Link>
                             <button
                               onClick={() => createCartHandler(item._id)}
                               className={`add-cart ${

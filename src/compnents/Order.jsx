@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { invoiceGetRequest } from "../apiRequest/apiRequiest";
 import { useDispatch, useSelector } from "react-redux";
 import { setInvoice } from "../redux/state-slice/invoice-slice";
+import { Link } from "react-router-dom";
 
 const Order = () => {
   const invoiceData = useSelector((state) => state.getInvoiceList.invoice);
@@ -37,7 +38,7 @@ const Order = () => {
                   stroke-linejoin="round"
                 />
               </svg>
-              <a href="/">back to home</a>
+              <Link to="/">back to home</Link>
             </div>
             <div className="col-12">
               <h1 className="common_main_head">Complete!</h1>

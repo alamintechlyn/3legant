@@ -5,6 +5,7 @@ import {
   removeCartRequest,
 } from "../apiRequest/apiRequiest";
 import { setCartList } from "../redux/state-slice/cartList-slice";
+import { Link } from "react-router-dom";
 
 const CartDetails = () => {
   const cartListData = useSelector((state) => state.getCartList.cartList);
@@ -333,9 +334,9 @@ const CartDetails = () => {
                 TK. {total}
               </span>
             </div>
-            <a href="/checkout" className="ah-checkout-button">
+            <Link to="/checkout" className="ah-checkout-button">
               Checkout
-            </a>
+            </Link>
           </div>
         </div>
       </div>

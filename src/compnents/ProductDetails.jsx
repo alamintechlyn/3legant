@@ -10,7 +10,7 @@ import {
   cartCreateRequest,
   productDetailsRequest,
 } from "../apiRequest/apiRequiest";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { setCartList } from "../redux/state-slice/cartList-slice";
@@ -22,7 +22,6 @@ const ProductDetails = () => {
   const [selectedColor, setSelectedColor] = useState("");
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [details, setDetails] = useState([]);
-  // console.log(details[0]?.[0]?.discountPrice);
   const cartListData = useSelector((state) => state.getCartList.cartList);
   const cartList = cartListData?.data?.data || [];
   const dispatch = useDispatch();
@@ -96,7 +95,7 @@ const ProductDetails = () => {
           <nav aria-label="breadcrumb">
             <ul className="breadcrumb">
               <li className="breadcrumb-item">
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"
@@ -114,7 +113,7 @@ const ProductDetails = () => {
                 </svg>
               </li>
               <li className="breadcrumb-item">
-                <a href="/shop">Shop</a>
+                <Link to="/shop">Shop</Link>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"
@@ -132,7 +131,7 @@ const ProductDetails = () => {
                 </svg>
               </li>
               <li className="breadcrumb-item">
-                <a href="#">{details[0]?.[0]?.category?.brandName}</a>
+                <Link to="#">{details[0]?.[0]?.category?.brandName}</Link>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="12"

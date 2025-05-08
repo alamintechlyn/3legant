@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { allCetegoryRequest } from "../apiRequest/apiRequiest";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from "../redux/state-slice/category-slice";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   const categoryData = useSelector((state) => state.getCategory.category);
@@ -26,9 +27,9 @@ const Category = () => {
               return (
                 <div key={i} className="col-lg-4">
                   <div className="category-card">
-                    <a href={"/category/"+item?._id}>
+                    <Link to={"/category/"+item?._id}>
                       <img src={item.brandImg} alt="" />
-                    </a>
+                    </Link>
                     <h4 className="categroy-text">{item.brandName}</h4>
                   </div>
                 </div>

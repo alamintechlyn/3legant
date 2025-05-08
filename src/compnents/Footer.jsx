@@ -1,19 +1,20 @@
 import React from "react";
 import logo from "../assets/images/fotter_logo.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="brand">
-            <a href="#">
+            <Link to="#">
               <img src={logo} alt="" />
-            </a>
+            </Link>
             <p className="categroy-text">
               More than just a game It's a lifestyle.
             </p>
             <div className="social-icons">
-              <a href="#" aria-label="Instagram">
+              <Link to="#" aria-label="Instagram">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -39,8 +40,8 @@ const Footer = () => {
                     stroke-width="1.5"
                   />
                 </svg>
-              </a>
-              <a href="#" aria-label="Facebook">
+              </Link>
+              <Link to="#" aria-label="Facebook">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -56,8 +57,8 @@ const Footer = () => {
                     stroke-linejoin="round"
                   />
                 </svg>
-              </a>
-              <a href="#" aria-label="YouTube">
+              </Link>
+              <Link to="#" aria-label="YouTube">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -81,7 +82,7 @@ const Footer = () => {
                     stroke-linecap="round"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -89,19 +90,19 @@ const Footer = () => {
             <h3 className="common-shop-now-btn">Page</h3>
             <ul>
               <li>
-                <a href="#">Home</a>
+                <Link to="#">Home</Link>
               </li>
               <li>
-                <a href="#">Shop</a>
+                <Link to="#">Shop</Link>
               </li>
               <li>
-                <a href="#">Product</a>
+                <Link to="#">Product</Link>
               </li>
               <li>
-                <a href="#">Articles</a>
+                <Link to="#">Articles</Link>
               </li>
               <li>
-                <a href="#">Contact Us</a>
+                <Link to="#">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -110,16 +111,16 @@ const Footer = () => {
             <h3 className="common-shop-now-btn">Info</h3>
             <ul>
               <li>
-                <a href="#">Shipping Policy</a>
+                <Link to="#">Shipping Policy</Link>
               </li>
               <li>
-                <a href="#">Return & Refund</a>
+                <Link to="#">Return & Refund</Link>
               </li>
               <li>
-                <a href="#">Support</a>
+                <Link to="#">Support</Link>
               </li>
               <li>
-                <a href="#">FAQs</a>
+                <Link to="#">FAQs</Link>
               </li>
             </ul>
           </div>
@@ -130,7 +131,7 @@ const Footer = () => {
               <li>43111 Hai Trieu street,</li>
               <li>District 1, HCMC</li>
               <li>Vietnam</li>
-              <li><a href="tel:84-756-3237" class="phone-link">84-756-3237</a></li>
+              <li><Link to="tel:84-756-3237" class="phone-link">84-756-3237</Link></li>
             </ul>
           </div>
         </div>
@@ -138,8 +139,8 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-left">
             <span className="coppy_text">Copyright © 2023 3legant. All rights reserved</span>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
+            <Link to="#">Privacy Policy</Link>
+            <Link to="#">Terms & Conditions</Link>
           </div>
           <div className="payment-methods">
               <img src="https://cdn.shopify.com/s/files/1/0639/7352/3521/files/payment-02.png?v=1746113973" alt="" />
