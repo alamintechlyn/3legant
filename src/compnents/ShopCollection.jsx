@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const ShopCollection = () => {
   const [data, setData] = useState([]);
-
   useEffect(() => {
     (async () => {
       let result = await allCollectionListRequest();
@@ -18,7 +17,7 @@ const ShopCollection = () => {
         <div className="container">
           <h2 className="common_main_head">Shop Collection</h2>
           <div className="row shop-main-row">
-            {data.slice(0, 1).map((item) => (
+            {data?.slice(0, 1).map((item) => (
               <div className="col-lg-6 left-col" key={item?.id}>
                 <div className="img-card-area">
                   <Link to={"/collection/" + item?._id}>
