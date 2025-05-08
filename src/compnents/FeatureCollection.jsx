@@ -97,8 +97,8 @@ const FeatureCollection = () => {
                   },
                 }}
               >
-                {productData.length > 0 ? (
-                  productData.slice(0, 8).map((item, i) => {
+                {productData?.length > 0 ? (
+                  productData?.slice(0, 8).map((item, i) => {
                     const isInCart = isProductInCart(item._id);
                     return (
                       <SwiperSlide key={i}>

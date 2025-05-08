@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { allCollectionListRequest } from "../apiRequest/apiRequiest";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setCollection } from "../redux/state-slice/collection-slice";
 
 const ShopCollection = () => {
-  const [data, setData] = useState([]);
+  const collectionData = useSelector((state) => state.getCollection.collection);
+  const dispatch= useDispatch();
   useEffect(() => {
     (async () => {
       let result = await allCollectionListRequest();
-      setData(result);
+      dispatch(setCollection(result));
     })();
   }, []);
 
@@ -17,7 +20,7 @@ const ShopCollection = () => {
         <div className="container">
           <h2 className="common_main_head">Shop Collection</h2>
           <div className="row shop-main-row">
-            {data?.slice(0, 1).map((item) => (
+            {collectionData?.slice(0, 1).map((item) => (
               <div className="col-lg-6 left-col" key={item?.id}>
                 <div className="img-card-area">
                   <Link to={"/collection/" + item?._id}>
@@ -37,7 +40,7 @@ const ShopCollection = () => {
               </div>
             ))}
             <div className="col-lg-6 down-col-shop">
-              {data.slice(1).map((item) => (
+              {collectionData?.slice(1).map((item) => (
                 <div className="img-card-area" key={item?.id}>
                   <div className="text">
                     <h4 className="card-text">{item?.collectionName}</h4>

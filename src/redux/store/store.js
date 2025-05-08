@@ -32,6 +32,7 @@ import orderListSlice from "../state-slice/orderList-slice";
 import wishListSlice from "../state-slice/wishList-slice";
 import searchSlice from "../state-slice/search-slice";
 import reviewSlice from "../state-slice/review-slice";
+import collectionSlice from "../state-slice/collection-slice";
 
 // Combine reducers
 const rootReducer = combineReducers({
@@ -44,6 +45,7 @@ const rootReducer = combineReducers({
   getWishList: wishListSlice,
   getSearch: searchSlice,
   getReview: reviewSlice,
+  getCollection: collectionSlice
 });
 
 // Persist config
