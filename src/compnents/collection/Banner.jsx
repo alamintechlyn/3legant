@@ -21,7 +21,7 @@ const Banner = () => {
                     >
                       <path
                         d="M4.58423 3L7.58423 6L4.58423 9"
-                        stroke="#605F5F"
+                        stroke="#fff"
                         stroke-width="0.75"
                         stroke-linecap="round"
                         stroke-linejoin="round"

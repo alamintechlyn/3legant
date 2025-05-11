@@ -82,7 +82,7 @@ const Collection = () => {
   const handleLoadMore = () => {
     setLoad((count) => count + 3);
   };
-  const productToDisplay = sortedData.slice(0, load);
+  const productToDisplay = sortedData?.slice(0, load);
 
   // category list get
   const [cat, setCat] = useState([]);

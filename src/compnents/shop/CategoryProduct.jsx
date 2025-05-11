@@ -1,16 +1,16 @@
-import React from 'react';
+
 import Navigation from './../Navigation';
-import Banner from '../shop/Banner';
 import Footer from '../Footer';
 import CategoryCollection from './CategoryCollection';
+import CategroyCollection from '../CategoryBanner';
 
 const CategoryProduct = () => {
     return (
         <div>
-            <Navigation/>
-            <Banner/>
-            <CategoryCollection/>
-            <Footer/>
+            <Navigation />
+            <CategroyCollection />
+            <CategoryCollection />
+            <Footer />
         </div>
     );
 };

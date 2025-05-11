@@ -1,15 +1,16 @@
-import React from "react";
 
-const Banner = () => {
+import { Link } from "react-router-dom";
+
+const CollectionBanner = () => {
   return (
     <div>
       <section className="shop_banner">
-        <div className="container bg-banner">
+        <div className="container collection-banner">
           <div className="row">
             <div className="col-lg-12">
               <div className="text_wrapper">
                 <div className="btn">
-                  <a href="/" className="btn-home">
+                  <Link to="/" className="btn-home">
                     Home
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -26,11 +27,13 @@ const Banner = () => {
                         stroke-linejoin="round"
                       />
                     </svg>
-                  </a>
-                  <h4 className="shop-btn">Shop</h4>
+                  </Link>
+                  <h4 className="shop-btn">Collection</h4>
                 </div>
-                <h2 className="shop-text">Shop Page</h2>
-                <p className="categroy-text">Let’s design the place you always imagined.</p>
+                <h2 className="shop-text">Collection Page</h2>
+                <p className="categroy-text">
+                  Let’s design the place you always imagined.
+                </p>
               </div>
             </div>
           </div>
@@ -40,4 +43,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default CollectionBanner;
