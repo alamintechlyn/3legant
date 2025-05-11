@@ -5032,11 +5032,13 @@
 
 .blog_section .blog-grid .blog-card .blog-image img {
   height: 325px;
-  aspect-ratio: 357/325;
+  width: 100%;
   object-fit: cover;
 }
 
-
+.blog_section .container{
+  padding: 0;
+}
 
 .blog_section .blog-grid .blog-card .blog-content .blog-title {
   font-size: 18px;
