@@ -62,7 +62,7 @@ const BlogList = () => {
     {
       id: 9,
       image:
-        "https://cdn.shopify.com/s/files/1/0639/7352/3521/files/c456d04e4963ce2362c0dd6120739fdb60471759.jpg?v=1746112222",
+        "https://cdn.shopify.com/s/files/1/0639/7352/3521/files/fc6aee3082f8080b7bc0c5245a7472d96c9e2490.jpg?v=1746112225",
       title: "Modern texas home is beautiful and completely kid-friendly",
       date: "October 16, 2023",
     },
