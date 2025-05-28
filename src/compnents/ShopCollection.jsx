@@ -6,7 +6,7 @@ import { setCollection } from "../redux/state-slice/collection-slice";
 
 const ShopCollection = () => {
   const collectionData = useSelector((state) => state.getCollection.collection);
-  const dispatch= useDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
       let result = await allCollectionListRequest();
@@ -19,30 +19,17 @@ const ShopCollection = () => {
       <section className="shop-collection-section">
         <div className="container">
           <h2 className="common_main_head">Shop Collection</h2>
-          <div className="row shop-main-row">
-            {collectionData?.slice(0, 1).map((item) => (
-              <div className="col-lg-6 left-col" key={item?.id}>
-                <div className="img-card-area">
-                  <Link to={"/collection/" + item?._id}>
-                    <img
-                      src={item.collectionImage}
-                      alt={item?.collectionName}
-                    />
-                  </Link>
-                  <h4 className="card-text">{item?.collectionName}</h4>
-                  <Link to={"/collection/" + item?._id}>
-                    <div className="btns">
-                      <p className="btn-text">Collections</p>
-                      <ArrowIcon />
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            ))}
-            <div className="col-lg-6 down-col-shop">
-              {collectionData?.slice(1).map((item) => (
-                <div className="img-card-area" key={item?.id}>
-                  <div className="text">
+          {collectionData && collectionData.length > 0 ? (
+            <div className="row shop-main-row">
+              {collectionData?.slice(0, 1).map((item) => (
+                <div className="col-lg-6 left-col" key={item?._id}>
+                  <div className="img-card-area">
+                    <Link to={"/collection/" + item?._id}>
+                      <img
+                        src={item.collectionImage}
+                        alt={item?.collectionName}
+                      />
+                    </Link>
                     <h4 className="card-text">{item?.collectionName}</h4>
                     <Link to={"/collection/" + item?._id}>
                       <div className="btns">
@@ -51,18 +38,35 @@ const ShopCollection = () => {
                       </div>
                     </Link>
                   </div>
-                  <div className="img">
-                    <Link to={"/collection/" + item?._id}>
-                      <img
-                        src={item?.collectionImage}
-                        alt={item?.collectionName}
-                      />
-                    </Link>
-                  </div>
                 </div>
               ))}
+              <div className="col-lg-6 down-col-shop">
+                {collectionData?.slice(1).map((item) => (
+                  <div className="img-card-area" key={item?._id}>
+                    <div className="text">
+                      <h4 className="card-text">{item?.collectionName}</h4>
+                      <Link to={"/collection/" + item?._id}>
+                        <div className="btns">
+                          <p className="btn-text">Collections</p>
+                          <ArrowIcon />
+                        </div>
+                      </Link>
+                    </div>
+                    <div className="img">
+                      <Link to={"/collection/" + item?._id}>
+                        <img
+                          src={item?.collectionImage}
+                          alt={item?.collectionName}
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          ) : (
+            <p className="text-center mt-4">No collections available.</p>
+          )}
         </div>
       </section>
     </div>

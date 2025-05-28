@@ -1,13 +1,13 @@
 import React, { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { SignInRequest } from "../../apiRequest/apiRequiest";
-import {jwtDecode} from "jwt-decode"; 
+import { jwtDecode } from "jwt-decode";
 import { Link } from "react-router-dom";
-
+import { TailSpin } from "react-loader-spinner";
 
 const SignIn = () => {
   const [show, setShow] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   const toggleShowHandler = () => {
     setShow(!show);
   };
@@ -23,32 +23,33 @@ const SignIn = () => {
       toast.error("Please fill in all fields.");
       return;
     }
-
+    setLoading(true);
     try {
       const result = await SignInRequest(email, pass);
       localStorage.clear();
       if (result[0].data.status === "success") {
         toast.success("Sign in successfull!");
         localStorage.setItem("userToken", result[0].data.token);
-        
+
         // set userdetails
         const decodedToken = jwtDecode(result[0].data.token);
         const userDetails = {
-          id:decodedToken.user_id,
-          email: decodedToken.email, 
+          id: decodedToken.user_id,
+          email: decodedToken.email,
           name: decodedToken.user_fullName,
         };
-
         localStorage.setItem("userDetails", JSON.stringify(userDetails));
-
         setTimeout(() => {
-          window.location.href=sessionStorage.getItem('lastLocation')
+          window.location.href = sessionStorage.getItem('lastLocation')
         }, 1000);
       } else {
         toast.error("Sign in failed. Please try again.");
       }
     } catch (error) {
       toast.error("An error occurred. Please try again.");
+    }
+    finally {
+      setLoading(false);
     }
   };
 
@@ -148,8 +149,20 @@ const SignIn = () => {
                       <Link to="#">Forgot password</Link>
                     </p>
                   </div>
-                  <button onClick={onSignIn} className="sign-up-button">
+                  {/* <button onClick={onSignIn} className="sign-up-button">
                     Sign In
+                  </button> */}
+                  <button
+                    onClick={onSignIn}
+                    className="sign-up-button"
+                    disabled={loading}
+                    style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+                  >
+                    {loading ? (
+                      <TailSpin height={20} width={20} color="#fff" />
+                    ) : (
+                      "Sign In"
+                    )}
                   </button>
                 </div>
               </div>
