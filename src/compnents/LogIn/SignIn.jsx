@@ -164,12 +164,7 @@ const SignIn = () => {
                       "Sign In"
                     )}
                   </button>
-
                 </div>
-
-                <p style={{ marginTop: '20px' }}>Demo login</p>
-                <p>email: dev@gmail.com</p>
-                <p>password: 1234</p>
               </div>
             </div>
           </div>
