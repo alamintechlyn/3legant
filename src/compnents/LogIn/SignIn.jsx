@@ -3,7 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { SignInRequest } from "../../apiRequest/apiRequiest";
 import { jwtDecode } from "jwt-decode";
 import { Link } from "react-router-dom";
-import { TailSpin } from "react-loader-spinner";
+import { ClipLoader } from "react-spinners";
 
 const SignIn = () => {
   const [show, setShow] = useState(false);
@@ -159,15 +159,17 @@ const SignIn = () => {
                     style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
                   >
                     {loading ? (
-                      <TailSpin height={20} width={20} color="#fff" />
+                      <ClipLoader size={20} color="#fff" />
                     ) : (
                       "Sign In"
                     )}
                   </button>
+
                 </div>
-                  <p style={{marginTop:'20px'}}>Demo login</p>
-                  <p>email: dev@gmail.com</p>
-                  <p>password: 1234</p>
+
+                <p style={{ marginTop: '20px' }}>Demo login</p>
+                <p>email: dev@gmail.com</p>
+                <p>password: 1234</p>
               </div>
             </div>
           </div>
