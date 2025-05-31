@@ -43,10 +43,10 @@ const Navigation = () => {
 
   const cartItemCount =
     cartListData &&
-    cartListData.data &&
-    cartListData.data.data &&
-    cartListData.data.data.length > 0
-      ? cartListData.data.data.length
+      cartListData?.data &&
+      cartListData?.data?.data &&
+      cartListData?.data?.data?.length > 0
+      ? cartListData?.data?.data?.length
       : 0;
 
   return (
