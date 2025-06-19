@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from "../assets/images/Instagram/ins-01.jpg"; 
+import img1 from "../assets/images/Instagram/ins-01.jpg";
 import img2 from "../assets/images/Instagram/insta-02.jpg";
 import img3 from "../assets/images/Instagram/insta-03.jpg";
 import img4 from "../assets/images/Instagram/insta-04.jpg";
@@ -31,7 +31,7 @@ const Instagram = () => {
                 href={image}
                 data-lightbox="gallery"
               >
-                <img src={image}/>
+                <img src={image} />
               </a>
             ))}
           </div>
