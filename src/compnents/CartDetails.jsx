@@ -13,7 +13,7 @@ const CartDetails = () => {
   const dispatch = useDispatch();
   const [selectedShipping, setSelectedShipping] = useState("outside");
 
-  const subtotal = cartList.reduce(
+  const subtotal = cartList?.reduce(
     (total, item) => total + item.product.price * item.qty,
     0
   );
@@ -21,7 +21,7 @@ const CartDetails = () => {
   // Function to remove item
   const removeItem = async (id) => {
     await removeCartRequest(id);
-    const updatedCart = cartList.filter((item) => item.productID !== id);
+    const updatedCart = cartList?.filter((item) => item.productID !== id);
     dispatch(setCartList({ data: { data: updatedCart } }));
   };
 
@@ -30,7 +30,7 @@ const CartDetails = () => {
     newQuantity = Number(newQuantity);
     if (newQuantity >= 1) {
       await cartCreateRequest(productid, newQuantity);
-      const updateCart = cartList.map((item) =>
+      const updateCart = cartList?.map((item) =>
         item.productID === productid ? { ...item, qty: newQuantity } : item
       );
       dispatch(setCartList({ data: { data: updateCart } }));
@@ -82,8 +82,8 @@ const CartDetails = () => {
                 Subtotal
               </div>
             </div>
-            {cartList.length > 0 ? (
-              cartList.map((product, id) => (
+            {cartList?.length > 0 ? (
+              cartList?.map((product, id) => (
                 <div key={id} className="ah-cart-item">
                   <div className="ah-product-info">
                     <div className="ah-product-image">
