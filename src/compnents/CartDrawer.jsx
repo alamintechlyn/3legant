@@ -24,7 +24,7 @@ const CartDrawer = ({ iscartActive, isSetcartActive, isOpen, onClose }) => {
     newQuantity = Number(newQuantity);
     if (newQuantity >= 1) {
       await cartCreateRequest(productid, newQuantity);
-      const updateCart = cartList.map((item) =>
+      const updateCart = cartList?.map((item) =>
         item?.productID === productid ? { ...item, qty: newQuantity } : item
       );
       dispatch(setCartList({ data: { data: updateCart } }));
@@ -75,7 +75,7 @@ const CartDrawer = ({ iscartActive, isSetcartActive, isOpen, onClose }) => {
 
         <div className="cart-items">
           {cartList?.length > 0 ? (
-            cartList.map((item, id) => (
+            cartList?.map((item, id) => (
               <div key={id} className="cart-item">
                 <Link
                   to={`/product-details/` + item?.productID}
