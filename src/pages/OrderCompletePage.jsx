@@ -1,14 +1,23 @@
-import React from 'react';
-import Order from '../compnents/Order';
+import { Suspense, lazy } from 'react';
+import SkeletonLoader from '../compnents/SkeletonLoader';
+
 import Navigation from '../compnents/Navigation';
-import Footer from '../compnents/Footer';
+
+const Order = lazy(() => import('../compnents/Order'));
+const Footer = lazy(() => import('../compnents/Footer'));
 
 const OrderCompletePage = () => {
     return (
         <div>
-            <Navigation/>
-            <Order/>
-            <Footer/>
+            <Navigation />
+
+            <Suspense fallback={<SkeletonLoader height={300} />}>
+                <Order />
+            </Suspense>
+
+            <Suspense fallback={<SkeletonLoader height={120} />}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };

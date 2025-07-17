@@ -1,34 +1,57 @@
-import React from "react";
 
-import "../assets/css/bootstrap-grid.css";
-import "../assets/css/common.css";
-import "../assets/css/style.css";
+import { Suspense, lazy } from "react";
+import Header from "../compnents/Header";
 import Navigation from "../compnents/Navigation";
 import Banner from "../compnents/Banner";
-import FeatureCollection from "../compnents/FeatureCollection";
-import Category from "../compnents/Category";
-import Discount from "../compnents/Discount";
-import ShopCollection from "../compnents/ShopCollection";
-import Article from "../compnents/Article";
-import Newslatter from "../compnents/Newslatter";
-import Instagram from "../compnents/Instagram";
-import Footer from "../compnents/Footer";
-import Header from "../compnents/Header";
+import SkeletonLoader from "../compnents/SkeletonLoader"; 
+
+const FeatureCollection = lazy(() => import("../compnents/FeatureCollection"));
+const Category = lazy(() => import("../compnents/Category"));
+const Discount = lazy(() => import("../compnents/Discount"));
+const ShopCollection = lazy(() => import("../compnents/ShopCollection"));
+const Article = lazy(() => import("../compnents/Article"));
+const Newslatter = lazy(() => import("../compnents/Newslatter"));
+const Instagram = lazy(() => import("../compnents/Instagram"));
+const Footer = lazy(() => import("../compnents/Footer"));
 
 const HomePage = () => {
   return (
     <div>
-      <Header/>
+      <Header />
       <Navigation />
       <Banner />
-      <FeatureCollection />
-      <Category/>
-      <Discount/>
-      <ShopCollection/>
-      <Article/>
-      <Newslatter/>
-      <Instagram/>
-      <Footer/>
+
+      <Suspense fallback={<SkeletonLoader height={300} />}>
+        <FeatureCollection />
+      </Suspense>
+
+      <Suspense fallback={<SkeletonLoader height={150} count={2} />}>
+        <Category />
+      </Suspense>
+
+      <Suspense fallback={<SkeletonLoader height={200} />}>
+        <Discount />
+      </Suspense>
+
+      <Suspense fallback={<SkeletonLoader height={250} />}>
+        <ShopCollection />
+      </Suspense>
+
+      <Suspense fallback={<SkeletonLoader height={200} count={2} />}>
+        <Article />
+      </Suspense>
+
+      <Suspense fallback={<SkeletonLoader height={150} />}>
+        <Newslatter />
+      </Suspense>
+
+      <Suspense fallback={<SkeletonLoader height={150} />}>
+        <Instagram />
+      </Suspense>
+
+      <Suspense fallback={<SkeletonLoader height={100} />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };

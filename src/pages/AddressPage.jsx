@@ -1,14 +1,23 @@
-import React from 'react';
-import Address from '../compnents/profile/Address';
+import { Suspense, lazy } from 'react';
+import SkeletonLoader from '../compnents/SkeletonLoader';
+
 import Navigation from '../compnents/Navigation';
-import Footer from '../compnents/Footer';
+
+const Address = lazy(() => import('../compnents/profile/Address'));
+const Footer = lazy(() => import('../compnents/Footer'));
 
 const AddressPage = () => {
     return (
         <div>
-            <Navigation/>
-            <Address/>
-            <Footer/>
+            <Navigation />
+
+            <Suspense fallback={<SkeletonLoader height={300} />}>
+                <Address />
+            </Suspense>
+
+            <Suspense fallback={<SkeletonLoader height={120} />}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };

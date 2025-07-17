@@ -1,14 +1,23 @@
-import React from "react";
-import Account from "../compnents/profile/Account";
+import { Suspense, lazy } from "react";
+import SkeletonLoader from "../compnents/SkeletonLoader";
+
 import Navigation from "./../compnents/Navigation";
-import Footer from "./../compnents/Footer";
+
+const Account = lazy(() => import("../compnents/profile/Account"));
+const Footer = lazy(() => import("../compnents/Footer"));
 
 const MyAccountPage = () => {
   return (
     <div>
       <Navigation />
-      <Account />
-      <Footer />
+
+      <Suspense fallback={<SkeletonLoader height={300} />}>
+        <Account />
+      </Suspense>
+
+      <Suspense fallback={<SkeletonLoader height={120} />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };

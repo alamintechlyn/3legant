@@ -1,47 +1,72 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { allCetegoryRequest } from "../apiRequest/apiRequiest";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory } from "../redux/state-slice/category-slice";
 import { Link } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Category = () => {
   const categoryData = useSelector((state) => state.getCategory.category);
   const dispatch = useDispatch();
+  const [fetching, setFetching] = useState(true);
 
   useEffect(() => {
     (async () => {
+      setFetching(true);
       let result = await allCetegoryRequest();
-      dispatch(setCategory(result))
+      dispatch(setCategory(result));
+      setFetching(false);
     })();
-  },[]);
+  }, [dispatch]);
 
-  return (
-    <div>
+  if (fetching) {
+    // Skeleton for 3 category cards (adjust height/width as needed)
+    return (
       <section className="category-section">
         <div className="container category-container">
           <h2 className="common_main_head">Shop by Categories</h2>
           <div className="row row-cols-2 category-row">
-            {
-           categoryData.length>0?(
-            categoryData.map((item, i) => {
-              return (
-                <div key={i} className="col-lg-4">
-                  <div className="category-card">
-                    <Link to={"/category/"+item?._id}>
-                      <img src={item.brandImg} alt="" />
-                    </Link>
-                    <h4 className="categroy-text">{item.brandName}</h4>
-                  </div>
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="col-lg-4">
+                <div className="category-card">
+                  <Skeleton height={150} />
+                  <h4 className="categroy-text">
+                    <Skeleton width={120} />
+                  </h4>
                 </div>
-              );
-            })
-           ):(<span className="text-center">No Data Found</span>)
-            
-            }
+              </div>
+            ))}
           </div>
         </div>
       </section>
-    </div>
+    );
+  }
+
+  return (
+    <section className="category-section">
+      <div className="container category-container">
+        <h2 className="common_main_head">Shop by Categories</h2>
+        <div className="row row-cols-2 category-row">
+          {categoryData.length > 0 ? (
+            categoryData.map((item, i) => (
+              <div key={i} className="col-lg-4">
+                <div className="category-card">
+                  <div className="img-wrapper">
+                    <Link to={"/category/" + item?._id}>
+                      <img src={item?.brandImg} alt={item?.brandName || "Category"} />
+                    </Link>
+                  </div>
+                  <h4 className="categroy-text">{item?.brandName}</h4>
+                </div>
+              </div>
+            ))
+          ) : (
+            <span className="text-center">No Data Found</span>
+          )}
+        </div>
+      </div>
+    </section>
   );
 };
 

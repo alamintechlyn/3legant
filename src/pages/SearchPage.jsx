@@ -1,14 +1,23 @@
-import React from 'react';
-import Search from '../compnents/Search';
+import { Suspense, lazy } from 'react';
+import SkeletonLoader from '../compnents/SkeletonLoader';
+
 import Navigation from './../compnents/Navigation';
-import Footer from './../compnents/Footer';
+
+const Search = lazy(() => import('../compnents/Search'));
+const Footer = lazy(() => import('../compnents/Footer'));
 
 const SearchPage = () => {
     return (
         <div>
-            <Navigation/>
-            <Search/>
-            <Footer/>
+            <Navigation />
+
+            <Suspense fallback={<SkeletonLoader height={300} />}>
+                <Search />
+            </Suspense>
+
+            <Suspense fallback={<SkeletonLoader height={120} />}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };

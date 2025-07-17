@@ -19,6 +19,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import "./assets/css/bootstrap-grid.css";
+import "./assets/css/common.css";
+import "./assets/css/style.css";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react"; //  Import PersistGate
 import store, { persistor } from "./redux/store/store.js"; //  Import persistor

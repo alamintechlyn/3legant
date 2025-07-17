@@ -330,7 +330,7 @@ const Collection = () => {
                                 </div>
                               )}
                             <a href={"/product-details/" + item._id}>
-                              <img src={item.image} alt="Collection Image" />
+                              <img src={item.image} alt="Collection Image" loading="lazy" />
                             </a>
                           </div>
                           <div className="rating">

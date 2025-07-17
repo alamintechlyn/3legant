@@ -1,14 +1,23 @@
-import React from 'react';
-import CheckOut from '../compnents/CheckOut';
+import { Suspense, lazy } from 'react';
+import SkeletonLoader from '../compnents/SkeletonLoader';
+
 import Navigation from '../compnents/Navigation';
-import Footer from '../compnents/Footer';
+
+const CheckOut = lazy(() => import('../compnents/CheckOut'));
+const Footer = lazy(() => import('../compnents/Footer'));
 
 const CheckOutPage = () => {
     return (
         <div>
-            <Navigation/>
-            <CheckOut/>
-            <Footer/>
+            <Navigation />
+
+            <Suspense fallback={<SkeletonLoader height={300} />}>
+                <CheckOut />
+            </Suspense>
+
+            <Suspense fallback={<SkeletonLoader height={100} />}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };

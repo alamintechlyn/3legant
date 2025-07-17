@@ -771,17 +771,23 @@
   width: 100%;
 }
 
+.category-section .category-card .categroy-text {
+  padding-top: 24px;
+}
+
 .category-section .category-card img {
-  /* aspect-ratio: 357/309; */
   object-fit: contain;
-  background: #f3f5f7;
-  margin-bottom: 24px;
+
   transition: all linear 0.3s;
 }
 
-.category-section .category-card:hover img {
-  transform: scale(1.1);
+.category-section .category-card .img-wrapper {
   overflow: hidden;
+  background: #f3f5f7;
+}
+
+.category-section .category-card .img-wrapper:hover img {
+  transform: scale(1.1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -1606,16 +1612,12 @@
 }
 
 /* Login section css end */
-
-
-
-
 /* =====================Shop Page==================== */
 
 /* banner section start */
 
 .shop_banner .bg-banner {
-  background: url('https://cdn.shopify.com/s/files/1/0639/7352/3521/files/pexels-kindelmedia-6573704.jpg?v=1746932584');
+  background: url('../images/shop_banner.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1626,7 +1628,7 @@
 }
 
 .shop_banner .collection-banner {
-  background: url('https://cdn.shopify.com/s/files/1/0639/7352/3521/files/pexels-kindelmedia-6573691.jpg?v=1746933893');
+  background: url('../images/collection_banner.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -5036,7 +5038,7 @@
   object-fit: cover;
 }
 
-.blog_section .container{
+.blog_section .container {
   padding: 0;
 }
 

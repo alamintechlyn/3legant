@@ -1,4 +1,3 @@
-import React from "react";
 import img from "../assets/images/banner-img/png.png";
 import { Link } from "react-router-dom";
 const Banner = () => {
@@ -21,8 +20,8 @@ const Banner = () => {
             </div>
             <div className="col-lg-6">
               <div className="banner-img-right">
-                <Link to="#">
-                  <img src={img} alt="" />
+                <Link to="/shop">
+                  <img src={img} alt="Banner" loading="lazy" />
                 </Link>
               </div>
             </div>

@@ -1,4 +1,3 @@
-import React from "react";
 
 const Banner = () => {
   return (
@@ -21,9 +20,9 @@ const Banner = () => {
                       <path
                         d="M4.58423 3L7.58423 6L4.58423 9"
                         stroke="#fff"
-                        stroke-width="0.75"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="0.75"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </a>

@@ -1,14 +1,23 @@
-import React from 'react';
-import Wishlist from '../compnents/profile/Wishlist';
+import { Suspense, lazy } from 'react';
+import SkeletonLoader from '../compnents/SkeletonLoader';
+
 import Navigation from '../compnents/Navigation';
-import Footer from '../compnents/Footer';
+
+const Wishlist = lazy(() => import('../compnents/profile/Wishlist'));
+const Footer = lazy(() => import('../compnents/Footer'));
 
 const WishlistPage = () => {
     return (
         <div>
-            <Navigation/>
-            <Wishlist/>
-            <Footer/>
+            <Navigation />
+
+            <Suspense fallback={<SkeletonLoader height={300} />}>
+                <Wishlist />
+            </Suspense>
+
+            <Suspense fallback={<SkeletonLoader height={120} />}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };

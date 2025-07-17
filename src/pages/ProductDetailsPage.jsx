@@ -1,18 +1,30 @@
-import React from 'react';
-import ProductDetails from '../compnents/ProductDetails';
-import Header from "../compnents/Header";
+import { Suspense, lazy } from 'react';
+import SkeletonLoader from '../compnents/SkeletonLoader';
+
+import Header from '../compnents/Header';
 import Navigation from '../compnents/Navigation';
-import Newslatter from './../compnents/Newslatter';
-import Footer from './../compnents/Footer';
+
+const ProductDetails = lazy(() => import('../compnents/ProductDetails'));
+const Newslatter = lazy(() => import('../compnents/Newslatter'));
+const Footer = lazy(() => import('../compnents/Footer'));
 
 const ProductDetailsPage = () => {
     return (
         <div>
-            <Header/>
-            <Navigation/>
-            <ProductDetails/>
-            <Newslatter/>
-            <Footer/>
+            <Header />
+            <Navigation />
+
+            <Suspense fallback={<SkeletonLoader height={400} />}>
+                <ProductDetails />
+            </Suspense>
+
+            <Suspense fallback={<SkeletonLoader height={150} />}>
+                <Newslatter />
+            </Suspense>
+
+            <Suspense fallback={<SkeletonLoader height={120} />}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };
