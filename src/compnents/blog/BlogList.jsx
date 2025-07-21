@@ -99,10 +99,6 @@ const BlogList = () => {
               </div>
             ))}
           </div>
-
-          {/* <div className="load-more">
-            <button className="load-more-button">Show more</button>
-          </div> */}
         </div>
       </div>
     </>
