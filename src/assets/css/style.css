@@ -233,11 +233,12 @@
 
 /* banner section start */
 .banner-section {
-  background-image: url("../images/banner-img/bannerBackground.png");
+  background-image: url("../images/banner-img/bannerBackground.png?format=webp&quality=75&width=1920");
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 100%;
 }
 
 .banner-section .banner-img-right a img {

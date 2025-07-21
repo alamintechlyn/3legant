@@ -83,8 +83,12 @@ const BlogList = () => {
                 <div className="blog-image">
                   <Link to="/blogDetails">
                     <img
-                      src={post.image || "/placeholder.svg"}
-                      alt={post.title}
+                      src={post.image ? `${post.image}?width=100&quality=80` : "/placeholder.svg"}
+                      alt={post.title || "Post image"}
+                      loading="lazy"
+                      decoding="async"
+                      width={100}
+                      height={100}
                     />
                   </Link>
                 </div>

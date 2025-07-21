@@ -21,7 +21,14 @@ const Banner = () => {
             <div className="col-lg-6">
               <div className="banner-img-right">
                 <Link to="/shop">
-                  <img src={img} alt="Banner" loading="lazy" />
+                  <img
+                    src={`${img}?width=100&quality=80`}
+                    alt="Banner"
+                    loading="lazy"
+                    decoding="async"
+                    width={100}
+                    height={100}
+                  />
                 </Link>
               </div>
             </div>

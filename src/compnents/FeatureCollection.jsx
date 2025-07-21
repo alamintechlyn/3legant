@@ -116,7 +116,15 @@ const FeatureCollection = () => {
                             )}
 
                             <Link to={"/product-details/" + item._id}>
-                              <img className="product-image" src={item.image} alt={item.title} />
+                              {/* <img loading="lazy" width={100} height={100} className="product-image" src={item.image} alt={item.title} /> */}
+                              <img
+                                loading="lazy"
+                                width={100}
+                                height={100}
+                                className="product-image"
+                                src={`${item.image}?width=200&quality=80`}
+                                alt={item.title || "Product image"}
+                              />
                             </Link>
                             <button
                               onClick={() => createCartHandler(item._id)}

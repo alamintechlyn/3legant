@@ -54,7 +54,13 @@ const Category = () => {
                 <div className="category-card">
                   <div className="img-wrapper">
                     <Link to={"/category/" + item?._id}>
-                      <img src={item?.brandImg} alt={item?.brandName || "Category"} />
+                      <img
+                        src={`${item?.brandImg}?w=400&q=75`}
+                        alt={item?.brandName || "Category"}
+                        loading="lazy"
+                        width={100}
+                        height={100}
+                      />
                     </Link>
                   </div>
                   <h4 className="categroy-text">{item?.brandName}</h4>
