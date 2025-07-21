@@ -6,6 +6,7 @@ import { Pagination } from "swiper/modules";
 import {
   allProductRequiest,
   cartCreateRequest,
+  featureProductRequest,
   getAllCartRequest,
 } from "../apiRequest/apiRequiest";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,7 +39,7 @@ const FeatureCollection = () => {
     (async () => {
       setFetchingProducts(true);
       try {
-        let result = await allProductRequiest();
+        let result = await featureProductRequest();
         dispatch(setProduct(result));
       } finally {
         setFetchingProducts(false);

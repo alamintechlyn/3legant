@@ -12,6 +12,16 @@ export async function allProductRequiest() {
   }
 }
 
+export async function featureProductRequest() {
+  try {
+    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/feature-product");
+    let data = result.data.data;
+    return data;
+  } catch (e) {
+    return [];
+  }
+}
+
 export async function allCetegoryRequest() {
   try {
     let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/category");
