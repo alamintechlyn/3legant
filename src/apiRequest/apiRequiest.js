@@ -4,7 +4,7 @@ const verifyUser = localStorage.getItem("userToken");
 
 export async function allProductRequiest() {
   try {
-    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/allProduct");
+    let result = await axios.get("https://shop-wise-mern.onrender.com/api/v1/allProduct");
     let data = result.data.data;
     return data;
   } catch (e) {
@@ -14,7 +14,7 @@ export async function allProductRequiest() {
 
 export async function featureProductRequest() {
   try {
-    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/feature-product");
+    let result = await axios.get("https://shop-wise-mern.onrender.com/api/v1/feature-product");
     let data = result.data.data;
     return data;
   } catch (e) {
@@ -24,7 +24,7 @@ export async function featureProductRequest() {
 
 export async function allCetegoryRequest() {
   try {
-    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/category");
+    let result = await axios.get("https://shop-wise-mern.onrender.com/api/v1/category");
     let data = result.data["data"];
     return data;
   } catch (e) {
@@ -35,7 +35,7 @@ export async function allCetegoryRequest() {
 // all collection list
 export async function allCollectionListRequest() {
   try {
-    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/collectionList");
+    let result = await axios.get("https://shop-wise-mern.onrender.com/api/v1/collectionList");
     let data = result.data["data"];
     return data;
   } catch (e) {
@@ -46,7 +46,7 @@ export async function allCollectionListRequest() {
 export async function productByCollectionRequest(id) {
   try {
     let result = await axios.get(
-      "https://shop-wise-mern.vercel.app/api/v1/prodcutByCollection/" + id
+      "https://shop-wise-mern.onrender.com/api/v1/prodcutByCollection/" + id
     );
     let data = result?.data["data"];
     return data;
@@ -58,7 +58,7 @@ export async function productByCollectionRequest(id) {
 export async function productByCategoryRequest(id) {
   try {
     let result = await axios.get(
-      "https://shop-wise-mern.vercel.app/api/v1/productByCategory/" + id
+      "https://shop-wise-mern.onrender.com/api/v1/productByCategory/" + id
     );
     let data = result?.data["data"];
     return data;
@@ -70,7 +70,7 @@ export async function productByCategoryRequest(id) {
 export async function productDetailsRequest(id) {
   try {
     let result = await axios.get(
-      "https://shop-wise-mern.vercel.app/api/v1/productDetails/" + id
+      "https://shop-wise-mern.onrender.com/api/v1/productDetails/" + id
     );
     let data = result.data["data"];
     return [data];
@@ -97,7 +97,7 @@ export async function userSignUpRequest(
       password: password,
     };
     let result = await axios.post(
-      "https://shop-wise-mern.vercel.app/api/v1/registration",
+      "https://shop-wise-mern.onrender.com/api/v1/registration",
       reqBody
     );
     return [result];
@@ -109,7 +109,7 @@ export async function SignInRequest(email, password) {
   try {
     let reqBody = { email: email, password: password };
     let result = await axios.post(
-      "https://shop-wise-mern.vercel.app/api/v1/login",
+      "https://shop-wise-mern.onrender.com/api/v1/login",
       reqBody
     );
     return [result];
@@ -120,7 +120,7 @@ export async function SignInRequest(email, password) {
 
 export async function userGetRequest() {
   try {
-    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/userDetails", {
+    let result = await axios.get("https://shop-wise-mern.onrender.com/api/v1/userDetails", {
       headers: {
         token: verifyUser,
       },
@@ -159,7 +159,7 @@ export async function updateUserProfileRequest(
     }
 
     let result = await axios.post(
-      "https://shop-wise-mern.vercel.app/api/v1/updateProfile",
+      "https://shop-wise-mern.onrender.com/api/v1/updateProfile",
       formData,
       {
         headers: {
@@ -180,7 +180,7 @@ export async function cartCreateRequest(productID, qty, color, size) {
   try {
     let reqbody = { productID: productID, qty: qty, color: color, size: size };
     let result = await axios.post(
-      "https://shop-wise-mern.vercel.app/api/v1/CartCreate",
+      "https://shop-wise-mern.onrender.com/api/v1/CartCreate",
       reqbody,
       {
         headers: {
@@ -197,7 +197,7 @@ export async function cartCreateRequest(productID, qty, color, size) {
 
 export async function getAllCartRequest() {
   try {
-    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/getCart", {
+    let result = await axios.get("https://shop-wise-mern.onrender.com/api/v1/getCart", {
       headers: {
         token: verifyUser,
       },
@@ -212,7 +212,7 @@ export async function getAllCartRequest() {
 export async function removeCartRequest(productID) {
   try {
     let reqbody = { productID: productID };
-    let result = await axios.delete("https://shop-wise-mern.vercel.app/api/v1/removeCart", {
+    let result = await axios.delete("https://shop-wise-mern.onrender.com/api/v1/removeCart", {
       data: reqbody,
       headers: {
         token: verifyUser,
@@ -257,7 +257,7 @@ export async function invoiceCreateRequest(
       order_status: order_status,
     };
     let result = await axios.post(
-      "https://shop-wise-mern.vercel.app/api/v1/createInvoice",
+      "https://shop-wise-mern.onrender.com/api/v1/createInvoice",
       reqbody,
       {
         headers: {
@@ -274,7 +274,7 @@ export async function invoiceCreateRequest(
 
 export async function invoiceGetRequest() {
   try {
-    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/getInvoice", {
+    let result = await axios.get("https://shop-wise-mern.onrender.com/api/v1/getInvoice", {
       headers: {
         token: verifyUser,
       },
@@ -288,7 +288,7 @@ export async function invoiceGetRequest() {
 
 export async function getOrderListRequest() {
   try {
-    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/orderList", {
+    let result = await axios.get("https://shop-wise-mern.onrender.com/api/v1/orderList", {
       headers: {
         token: verifyUser,
       },
@@ -304,7 +304,7 @@ export async function getOrderListRequest() {
 
 export async function getWishListRequest() {
   try {
-    let result = await axios.get("https://shop-wise-mern.vercel.app/api/v1/wishList", {
+    let result = await axios.get("https://shop-wise-mern.onrender.com/api/v1/wishList", {
       headers: {
         token: verifyUser,
       },
@@ -318,7 +318,7 @@ export async function getWishListRequest() {
 export async function removeWishListRequest(productID) {
   try {
     let reqbody = { productID: productID };
-    let result = await axios.delete("https://shop-wise-mern.vercel.app/api/v1/deleteWish", {
+    let result = await axios.delete("https://shop-wise-mern.onrender.com/api/v1/deleteWish", {
       data: reqbody,
       headers: {
         token: verifyUser,
@@ -334,7 +334,7 @@ export async function addwishListRequest(productID) {
   try {
     let reqbody = { productID: productID };
     let result = await axios.post(
-      "https://shop-wise-mern.vercel.app/api/v1/createWishlist",
+      "https://shop-wise-mern.onrender.com/api/v1/createWishlist",
       reqbody,
       {
         headers: {
@@ -358,7 +358,7 @@ export async function createReveiwRequest(userID, productID, rating, comment) {
       comment: comment,
     };
     let result = await axios.post(
-      "https://shop-wise-mern.vercel.app/api/v1/createReview",
+      "https://shop-wise-mern.onrender.com/api/v1/createReview",
       reqbody,
       {
         headers: {
@@ -378,7 +378,7 @@ export async function getReviewRequest(userID) {
       userID: userID,
     };
     let result = await axios.post(
-      "https://shop-wise-mern.vercel.app/api/v1/getReview",
+      "https://shop-wise-mern.onrender.com/api/v1/getReview",
       reqbody
     );
     return result;
@@ -391,7 +391,7 @@ export async function getReviewRequest(userID) {
 export async function searchRequest(keyword) {
   try {
     let result = await axios.get(
-      "https://shop-wise-mern.vercel.app/api/v1/search/" + keyword
+      "https://shop-wise-mern.onrender.com/api/v1/search/" + keyword
     );
     return result;
   } catch (e) {
