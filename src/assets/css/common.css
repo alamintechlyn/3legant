@@ -48,20 +48,6 @@ button {
   --inter: "Inter", serif;
 }
 
-@font-face {
-  font-family: "Inter";
-  font-weight: 400;
-  src: url("../fonts/Inter18pt-Regular.woff2") format("woff2"),
-    url("../fonts/Inter18pt-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Inter";
-  font-weight: 600;
-  src: url("../fonts/Inter18pt-SemiBold.woff2") format("woff2"),
-    url("../fonts/Inter18pt-SemiBold.woff") format("woff");
-}
-
 .common_main_head {
   color: #000;
   font-size: 40px;
